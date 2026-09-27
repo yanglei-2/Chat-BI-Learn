@@ -1,0 +1,22 @@
+class QueryParser:
+    """用户查询解析器"""
+    def parse(self, user_input: str) -> dict:
+        """解析用户输入"""
+        return {
+            "original_question": user_input.strip(),
+            "is_valid": len(user_input.strip()) > 0
+        }
+
+    def validate(self, parsed_query: dict) -> bool:
+        """校验解析结果是否有效"""
+        return parsed_query.get("is_valid", False)
+
+
+# if __name__ == '__main__':
+#     query_parser = QueryParser()
+#     print(query_parser.parse("查询上个月的销售额"))
+#     print(query_parser.parse("订单总数"))
+# if __name__ == '__main__':
+#     query_parser = QueryParser()
+#     print(query_parser.parse("查询上个月的销售额"))
+#     print(query_parser.parse("订单总数"))
